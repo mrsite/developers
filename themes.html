@@ -1,0 +1,574 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>MrSite Documentation</title>
+	<meta name="description" content="">
+
+	<meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+
+	<script src="assets/js/libs/modernizr-2.5.3.min.js"></script>
+</head>
+<body>
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+	
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="./index.html" class="brand">MrSite SDK</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li>
+							<a href="index.html">Home</a>
+						</li>
+						<li class="active">
+							<a href="themes.html">Themes</a>
+						</li>
+						<li>
+							<a href="widgets.html">Widgets</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="wrapper clearfix">
+			<div class="wrapper-inner clearfix">
+				<div class="navigation-column">
+					<div id="absolute-navigation">
+						<ul class="nav nav-list affix">
+							<li>
+								<a href="#GettingStarted">Getting started</a>
+							</li>
+							<li>
+								<a href="#Editables">Editables</a>
+								<ul>
+									<li><a href="#Font">Font</a></li>
+									<li><a href="#Colour">Colour</a></li>
+									<li><a href="#Dropdown">Dropdown</a></li>
+									<li><a href="#Slider">Slider</a></li>
+									<li><a href="#Background">Background</a></li>
+									<li><a href="#Theme">Theme</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#Thumbnails">Thumbnails</a>
+							</li>
+							<li>
+								<a href="#CommonFunctions">Common {Less}CSS functions</a>
+								<ul>
+									<li><a href="#Rounded">Rounded corners</a></li>
+									<li><a href="#Gradients">Gradients</a></li>
+									<li><a href="#Shadows">Drop shadows</a></li>
+									<li><a href="#Opacity">Opacity</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#CalculateFunctions">Calculate {Less}CSS functions</a>
+								<ul>
+									<li><a href="#GridCalculator">Grid calculator</a></li>
+									<li><a href="#DefiningVariables">Defining variables</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="content-column">
+					
+					<div id="GettingStarted" class="content-section">
+						
+						<h2>Getting started with themes</h2>
+						
+						<p>Hi, and welcome to the SDK documentation for MrSite. The SDK allows you to build custom themes and widgets for all four MrSite packages, with the ability to submit your
+						works of art to the MrSite Marketplace. This documentation assumes that you're at an intermediate level in CSS (if you want to build themes) and JavaScript (if you want to build advanced themes or widgets), and won't cover the basics of either.</p>
+						
+					</div>
+					<div id="Editables" class="content-section">
+						
+						<h2>Editables</h2>
+						<p>Editables are a series of objects that you can add to your <code>common.less.css</code> file in order to extend it's customisation to the users of your theme or widget.</p>
+						<p>We'll start with the available editables that you can use in your theme. You can use as many editables (or none at all) as you like, it all depends on how much customisation you'd like to give your users. All editables are based on {Less}CSS, and requires some <a href="http://www.lesscss.org" target="_blank">knowledge</a>. </p>
+						
+						<div id="Font" class="content-article clearfix">
+							<h3>Font <code>"type":"font"</code></h3>
+							<p>
+								Give your users a selection of fonts for any element in your theme. In the example below, I've added a second option to the dropdown, which will add font inheritance to the element, in the event the user doesn't want to use a custom font.
+							</p>
+						
+<pre class="prettyprint linenums">
+@font:'OswaldBook', Helvetica, Arial, sans-serif;/*[{"type":"dropdown","name":"My font","group":"My group", "settings": {"'OswaldBook', Helvetica, Arial, sans-serif":"Oswald Book","inherit":"Same as body font"}}]*/</pre>
+<p>Applying this editable:</p>
+<pre class="prettyprint linenums">
+.element{
+	font-family:@font;
+}
+</pre>
+							<p>You can use any font you like with this editable, including <a href="http://www.fontsquirrel.com" target="_blank">@font-face</a> fonts. Define your font stack using the following code:<br/><code>"settings": {"'OswaldBook', Helvetica, Arial, sans-serif":"Oswald Book"}</code>.</p>
+							
+							<p>Substitute <code>"name":"My font"</code> with the name of the element you'd like to display to the user, and <code>"group":"My group"</code> as it's grouped editable.</p>
+							
+						</div>
+						
+						<div id="Colour" class="content-article clearfix">
+							<h3>Colour <code>"type":"color"</code></h3>
+							<p>
+								This editable will provide a colour picker for whenever you need one, for any element.
+							</p>
+<pre class="prettyprint linenums">
+@colour:#00B4FF;/*[{"type":"color","name":"My colour","group":"My group"}]*/
+</pre>
+<p>Applying this editable:</p>
+<pre class="prettyprint linenums">
+.element{
+	color:@colour;
+}
+</pre>
+							<p>You can use <strong>HEX</strong>, <strong>RGB</strong> or <strong>RGBa</strong>.<br/>
+							Substitute <code>"name":"My colour"</code> with the title of this editable, and <code>"name":"My group"</code> as it's grouped editable.</p>
+						</div>
+						
+						<div id="Dropdown" class="content-article clearfix">
+							<h3>Dropdown <code>"type":"dropdown"</code></h3>
+							<p>
+								This editable will give you a dropdown, with extended theme options you'd like to give the user of your theme.
+							</p>
+<pre class="prettyprint linenums">
+@dropdown:block;/*[{"type":"dropdown","name":"My dropdown","group":"My group", "settings": {"label":"none","label":"block"}}]*/
+</pre>
+<p>Applying this editable:</p>
+<pre class="prettyprint linenums">
+.element{
+	display:@dropdown;
+}
+</pre>
+							<p>You can add as many options as you like to this editable. In this example, we've used <code>display:block</code>.<br/>
+							Substitute <code>"name":"My dropdown"</code> with the title of this editable, and <code>"name":"My group"</code> as it's grouped editable.</p>
+						</div>
+						
+						<div id="Slider" class="content-article clearfix">
+							<h3>Slider <code>"type":"size"</code></h3>
+							<p>
+								The slider is useful for size editables in your theme. You can either use this, or a dropdown - however it's simpler to use a slider in some cases when a range of sizes can be applied. E.g the border size of images.
+							</p>
+<pre class="prettyprint linenums">
+@slider:0px;/*[{"type":"size","name":"My size","group":"My group", "settings": {"min":0,"max":5}}]*/
+</pre>
+<p>Applying this editable:</p>
+<pre class="prettyprint linenums">
+.element{
+	width:@slider;
+}
+</pre>
+							<p>Substitute <code>"name":"My size"</code> with the title of this editable, and <code>"name":"My group"</code> as it's grouped editable.</p>
+							<p>To get the slider working, define a minimum value <code>"min":0</code> and a maximum value <code>"max":0</code>.</p>
+							
+						</div>
+						
+						<div id="Background" class="content-article clearfix">
+							<h3>Background <code>"type":"image"</code> <code>"type":"backgroundrepeat"</code> <code>"type":"position"</code> <code>"type":"backgroundattachment"</code></h3>
+							<p>
+								The background editable can be attached to any element, with the following options available.
+							</p>
+<pre class="prettyprint linenums">
+@backgroundimage:none;/*[{"type":"image","name":"My image","group":"My group"}]*/
+@backgroundrepeat:no-repeat;/*[{"type":"backgroundrepeat","name":"My image repeat","group":"My group"}]*/
+@backgroundposition:top left;/*[{"type":"position","name":"My image position","group":"My group"}]*/
+@backgroundattachment:scroll;/*[{"type":"backgroundattachment","name":"My image attachment","group":"My group"}]*/
+</pre>
+
+<p>Applying this editable (the long way):</p>
+<pre class="prettyprint linenums">
+.element{
+	background-url:@backgroundimage;
+	background-repeat:@backgroundrepeat;
+	background-position:@backgroundposition;
+	background-attachment:@backgroundattachment;
+}
+</pre>
+<p>Applying this editable (short-hand):</p>
+<pre class="prettyprint linenums">
+.element{
+	background:@backgroundimage @backgroundrepeat @backgroundattachment @backgroundposition;
+}
+</pre>
+
+							<p>You can use all, or one of the above settings, however for full control over how users will upload background images, it's recommended that they're all used.</p>
+						</div>
+						
+						<div id="Theme" class="content-article clearfix">
+							<h3>Theme</h3>
+							<p>
+								Useful if you want to do a few variations on your theme. The outputted CSS will be: html .theme_1_class {/* My awesome css */}
+							</p>
+<pre class="prettyprint linenums">
+html {
+	.theme_1_class;/*[{"type":"dropdown","name":"My theme","group":"global", "settings": {"theme_1_class":"My theme 1","theme_2_class":"My theme 2"}}]*/
+}
+</pre>
+<p>Applying this editable:</p>
+<pre class="prettyprint linenums">
+.theme_1_class{
+	/*	Define your theme specific styles in here */
+}
+</pre>
+						
+							<p><span class="label label-info">Note:</span> You need to wrap the theme editable in <code>html {}</code> for it to work.<br/>When the CSS is processed, it will write the output as:
+							<code>html .theme_1_class { /* styles in here */}</code></p>
+
+						</div>
+						
+					</div>
+					<div id="Thumbnails" class="content-section">
+						
+						<h2>Thumbnails</h2>
+						<p>
+							The thumbnail settings below give you control over how the system will crop the users images. Keeping in mind that if you specify more images in your product grid, 
+							the sizes of the thumbnails will change. Below are some default sizes that we've found work across the board.
+						</p>
+<pre class="prettyprint linenums">
+/*
+Template.Product.Thumbnail:230,222
+Template.Category.Thumbnail:265,255
+Template.Showcase.Thumbnail:80,80
+Template.Showcase.Big.Thumbnail:370,0
+Template.Showcase.Zoom.Thumbnail:600,0
+Template.VariantProduct.Thumbnail:80,80
+*/
+</pre>
+						<p><span class="label label-info">Note:</span> Set the <strong>'y' value</strong> to <strong>0</strong> to stop image cropping for <code>Template.Product.Thumbnail</code> and the <code>Template.Showcase.Zoom.Thumbnail</code>.
+
+<h3>Product page thumbnail image</h3>
+<p><code>Template.Showcase.Thumbnail</code> &amp; <code>Template.VariantProduct.Thumbnail</code></p>
+<img class="img-polaroid" src="http://placehold.it/80x80">
+<div class="clear"></div>
+
+<h3>Products in grid image</h3>
+<p><code>Template.Product.Thumbnail</code></p>
+<img class="img-polaroid" src="http://placehold.it/230x222">
+<div class="clear"></div>
+
+<h3>Categories in grid image</h3>
+<p><code>Template.Category.Thumbnail</code></p>
+<img class="img-polaroid" src="http://placehold.it/265x255">
+<div class="clear"></div>
+
+<h3>Product page image</h3>
+<p><code>Template.Showcase.Big.Thumbnail</code></p>
+<img class="img-polaroid" src="http://placehold.it/370x0">
+<div class="clear"></div>
+
+<h3>Product page image zoomed or popup</h3>
+<p><code>Template.Showcase.Zoom.Thumbnail</code></p>
+<img class="img-polaroid" src="http://placehold.it/600x0">
+<div class="clear"></div>
+						
+					</div>
+					<div id="CommonFunctions" class="content-section">
+						
+						<h2>Common {Less}CSS functions</h2>
+						<p>
+							Here are a few functions that you can use to save yourself time. To apply it to any element, simply call the LessCSS function with the
+							defined variable and the SDK will do the rest.
+						</p>
+						
+						<div id="Rounded" class="content-article clearfix">
+							<h3>Rounded corners</h3>
+							<p>We all love rounded corners.</p>
+<pre class="prettyprint linenums">
+.rounded(@radius: 2px) {
+	-moz-border-radius:@radius;
+	-webkit-border-radius:@radius;
+	-o-border-radius:@radius;
+	-ms-border-radius:@radius;
+	-khtml-border-radius:@radius;
+	border-radius:@radius;
+}
+</pre>
+<p>Applying this function:</p>
+<pre class="prettyprint linenums">
+.element{
+	.rounded(5px);
+}
+</pre>
+							<p><span class="label label-info">Note:</span> You won't be able to see the rounded corners in IE6, or IE7.</p>
+						</div>
+
+						<div id="Gradients" class="content-article clearfix">
+							<h3>Gradients</h3>
+<pre class="prettyprint linenums">
+.gradient(@from, @to, @fallback) {
+	@ffgradient: "-moz-linear-gradient(center bottom, {0} 0%, {1} 100%)";
+	@wkgradient: "-webkit-gradient(linear,left top,left bottom,color-stop(0, {0}), color-stop(1, {1}))";
+	@iegradient: "progid:DXImageTransform.Microsoft.gradient(startColorstr='{1}', endColorstr='{0}')";
+	@ie8gradient: "\"progid:DXImageTransform.Microsoft.gradient(startColorstr='{1}', endColorstr='{0}')\"";
+
+	background : @fallback;                             /* for non-css3 browsers */
+	background : formatstring(@ffgradient, @from, @to); /* FF3.6+ */
+	background: formatstring(@wkgradient, @from, @to);  /* Saf4+, Chrome */
+	filter: formatstring(@iegradient, @from, @to);      /* IE6,IE7 */
+	-ms-filter: formatstring(@ie8gradient, @from, @to); /* IE8 */
+}
+</pre>
+<p>Applying this function:</p>
+<pre class="prettyprint linenums">
+.element{
+	.gradient(#000, #fff, #686868);
+}
+</pre>
+						</div>
+						
+						<div id="Shadows" class="content-article clearfix">
+							<h3>Drop shadows</h3>
+<pre class="prettyprint linenums">
+.dropshadow(@a:0px, @b:1px, @c:10px, @colour:rgba(0, 0, 0, 1)) {
+	-moz-box-shadow:@a @b @c @colour;
+	-webkit-box-shadow:@a @b @c @colour;
+	box-shadow:@a @b @c @colour;
+	-moz-box-shadow:@a @b @c @colour;
+	-webkit-box-shadow:@a @b @c @colour;
+	box-shadow:@a @b @c @colour;
+}
+</pre>
+<p>Applying this function:</p>
+<pre class="prettyprint linenums">
+.element{
+	.dropshadow(0px, 1px, 10px, rgba(0, 0, 0, 1));
+}
+</pre>
+						</div>
+						
+						<div id="Opacity" class="content-article clearfix">
+							<h3>Opacity</h3>
+<pre class="prettyprint linenums">
+.opacity(@opacity: 0.7){
+    @ie7opacity: "progid:DXImageTransform.Microsoft.Alpha(Opacity={0})";
+    @ieopacity: alpha(opacity={0});
+    -ms-filter:formatstring(@ie7opacity, (@opacity * 100));
+    filter:formatstring(@ieopacity, @opacity);
+    -moz-opacity:@opacity;
+    -khtml-opacity:@opacity;	
+    opacity:@opacity;
+}
+</pre>
+<p>Applying this function:</p>
+<pre class="prettyprint linenums">
+.element{
+    .opacity(0.7);
+}
+</pre>
+
+						</div>
+						
+					</div>
+					<div id="CalculateFunctions" class="content-section">
+						
+						<h2>Calculate {Less}CSS functions</h2>
+						<p>
+							Along with the <code>common.less.css</code> file, we've provided a <code>calculate.less.css</code> file that does (yep, you guessed it) all of the template calculations. As a web designer, I'm sure you've probably heard of the <a href="http://960.gs/" target="_blank">960 grid system</a>. Due to the nature and complexity of the drag and drop page builder in MrSite, we had to tackle the issue of page layouts a little differently. In the <code>calculate.less.css</code> file, we've added the <strong>Grid calculator</strong> which does all of the hard work for you.
+						</p>
+						
+						<div id="GridCalculator" class="content-article clearfix">
+							<h3>Grid calculator</h3>
+							<p>
+								Whenever a user drops a widget (Content, Twitter feed, Contact form) on their page, they're given a few choices. The first choice is the drop-zone, or content area. These can be seen in the calculator as:<br/><br/>
+								<code>ContentColumnOne</code>, <code>ContentColumnTwo</code>, <code>ContentColumnThree</code>, <code>ContentTop</code>, <code>ContentBottom</code> &amp; <code>footerWrapper</code>.
+							</p>
+							<br/>
+							<p>
+							Once they've dropped the widget in the zone, they'll choose a widget size - defined in the calculator as:<br/>
+							<br/>
+								<code>WrapClass0</code>, <code>WrapClass1</code>, <code>WrapClass2</code>, <code>WrapClass3</code> &amp; <code>WrapClass4</code>
+							</p>
+							<br/>
+							<p>
+								<code>WrapClass4</code> will be <strong>100%</strong> of the content width, while <code>WrapClass2</code> will be <strong>50%</strong> and so on.<br/>
+								<br/>
+								At any time, customers may have a product grid, at any size, in any content area of their website. You couldn't manually write CSS for all of these variables, so the grid calculator does all of this work for you. The width of everything is automatically created from a bunch of global sizes defined at the top of the theme.
+							</p>
+							<p><span class="label label-info">Note:</span> You don't need to understand how the grid calculator works, rather know what variables you need to put into it.</p>
+<pre class="prettyprint linenums">
+.GenerateWidgets(){
+	.ContentColumnOne{
+		.WrapClass0{.BuildSDK(@ColumnOneWidth, 1, 1, (2 * @ColumnOnePadding);}
+		.WrapClass1{.BuildSDK(@ColumnOneWidth, 1, 1, (2 * @ColumnOnePadding);}
+		.WrapClass2{.BuildSDK(@ColumnOneWidth, 1, 1, (2 * @ColumnOnePadding);}
+		.WrapClass3{.BuildSDK(@ColumnOneWidth, 1, 1, (2 * @ColumnOnePadding);}
+		.WrapClass4{.BuildSDK(@ColumnOneWidth, 1, 1, (2 * @ColumnOnePadding);}
+	}
+	.ContentColumnTwo{
+		.WrapClass0{.BuildSDK(@ColumnTwoWidth, 4, 1, (2 * @ColumnTwoPadding);}
+		.WrapClass1{.BuildSDK(@ColumnTwoWidth, 4, 1, (2 * @ColumnTwoPadding);}
+		.WrapClass2{.BuildSDK(@ColumnTwoWidth, 2, 2, (2 * @ColumnTwoPadding);}
+		.WrapClass3{.BuildSDK(@ColumnTwoWidth, (4/3), 3, (2 * @ColumnTwoPadding);}
+		.WrapClass4{.BuildSDK(@ColumnTwoWidth, 1, 4, (2 * @ColumnTwoPadding);}
+	}
+	.ContentColumnTwo_Small{
+		.WrapClass0{.BuildSDK(@ColumnTwoWidth_Small, 4, 1, (2 * @ColumnTwoPadding);}
+		.WrapClass1{.BuildSDK(@ColumnTwoWidth_Small, 4, 1, (2 * @ColumnTwoPadding);}
+		.WrapClass2{.BuildSDK(@ColumnTwoWidth_Small, 2, 2, (2 * @ColumnTwoPadding);}
+		.WrapClass3{.BuildSDK(@ColumnTwoWidth_Small, (4/3), 3, (2 * @ColumnTwoPadding);}
+		.WrapClass4{.BuildSDK(@ColumnTwoWidth_Small, 1, 3, (2 * @ColumnTwoPadding);}
+	}
+	.ContentColumnTwo_Full{
+		.WrapClass0{.BuildSDK(@ColumnTwoWidth_Full, 4, 1, (2 * @ColumnTwoPadding);}
+		.WrapClass1{.BuildSDK(@ColumnTwoWidth_Full, 4, 1, (2 * @ColumnTwoPadding);}
+		.WrapClass2{.BuildSDK(@ColumnTwoWidth_Full, 2, 3, (2 * @ColumnTwoPadding);}
+		.WrapClass3{.BuildSDK(@ColumnTwoWidth_Full, (4/3), 3, (2 * @ColumnTwoPadding);}
+		.WrapClass4{.BuildSDK(@ColumnTwoWidth_Full, 1, 4, (2 * @ColumnTwoPadding);}
+	}
+	.ContentColumnThree{
+		.WrapClass0{.BuildSDK(@ColumnThreeWidth, 1, 1, (2 * @ColumnThreePadding);}
+		.WrapClass1{.BuildSDK(@ColumnThreeWidth, 1, 1, (2 * @ColumnThreePadding);}
+		.WrapClass2{.BuildSDK(@ColumnThreeWidth, 1, 1, (2 * @ColumnThreePadding);}
+		.WrapClass3{.BuildSDK(@ColumnThreeWidth, 1, 1, (2 * @ColumnThreePadding);}
+		.WrapClass4{.BuildSDK(@ColumnThreeWidth, 1, 1, (2 * @ColumnThreePadding);}
+	}
+	.ContentTop{
+		.WrapClass0{.BuildSDK(@ContentTopWidth, 4, 2, (2 * @TopContentPadding);}
+		.WrapClass1{.BuildSDK(@ContentTopWidth, 4, 2, (2 * @TopContentPadding);}
+		.WrapClass2{.BuildSDK(@ContentTopWidth, 2, 3, (2 * @TopContentPadding);}
+		.WrapClass3{.BuildSDK(@ContentTopWidth, (4/3), 4, (2 * @TopContentPadding);}
+		.WrapClass4{.BuildSDK(@ContentTopWidth, 1, 5, (2 * @TopContentPadding);}
+	}
+	.ContentBottom{
+		.WrapClass0{.BuildSDK(@ContentBottomWidth, 4, 2, (2 * @BottomContentPadding);}
+		.WrapClass1{.BuildSDK(@ContentBottomWidth, 4, 2, (2 * @BottomContentPadding);}
+		.WrapClass2{.BuildSDK(@ContentBottomWidth, 2, 3, (2 * @BottomContentPadding);}
+		.WrapClass3{.BuildSDK(@ContentBottomWidth, (4/3), 4, (2 * @BottomContentPadding);}
+		.WrapClass4{.BuildSDK(@ContentBottomWidth, 1, 5, (2 * @BottomContentPadding);}
+	}
+	#footerWrapper{
+		.WrapClass0{.BuildSDK(@FooterWidth, 4, 2, (2 * @FooterPadding);}
+		.WrapClass1{.BuildSDK(@FooterWidth, 4, 2, (2 * @FooterPadding);}
+		.WrapClass2{.BuildSDK(@FooterWidth, 2, 3, (2 * @FooterPadding);}
+		.WrapClass3{.BuildSDK(@FooterWidth, (4/3), 4, (2 * @FooterPadding);}
+		.WrapClass4{.BuildSDK(@FooterWidth, 1, 5, (2 * @FooterPadding);}
+	}
+	
+	//Start generating the CSS
+	.BuildSDK(@width, @divider, @thumbcount, @padding){
+	
+		@wrapclasswidth:(((@width - @padding) / @divider) - ((2 * @WidgetPadding) + (2 * @WidgetMargin) + (2 * @WidgetBorderWidth)));
+		width:@wrapclasswidth;
+		
+		.productWrapper{
+			width:((@wrapclasswidth - (2 * @WidgetBodyPadding)) / @thumbcount);
+		}
+	}
+}
+.GenerateWidgets();
+</pre>
+						</div>
+						<div id="DefiningVariables" class="content-article clearfix">
+							<h3>Defining your template variables</h3>
+
+							<p>Template sizes (At the top of <code>calculate.less.css</code>)</p>
+<pre class="prettyprint linenums">
+//  Template width
+    @OuterTemplateWidth:960px;
+    @TemplateWidth:960px;
+    
+//  Column width
+    @ColumnOneWidth:220px;
+    
+//  Template outer spacing
+    @TemplateOuterSpacing:0px; 
+    
+//  Calculating the other columns
+    @ColumnThreeWidth:@ColumnOneWidth;
+    @ColumnTwoWidth:@TemplateWidth - @ColumnOneWidth;
+    @ColumnTwoWidth_Small:@TemplateWidth - @ColumnOneWidth - @ColumnThreeWidth;
+    @ColumnTwoWidth_Full:@TemplateWidth;
+    @ContentTopWidth:@TemplateWidth;
+    @ContentBottomWidth:@TemplateWidth;
+    @FooterWidth:@TemplateWidth;
+</pre>
+
+							<p>Template padding (At the top of <code>calculate.less.css</code>)</p>
+<pre class="prettyprint linenums">
+//  Column one dropzone
+    @ColumnOnePadding:0px;
+    @ColumnOneVerticalPadding:30px;
+    
+//  Column two dropzone
+    @ColumnTwoPadding:0px;
+    @ColumnTwoVerticalPadding:30px;
+    
+//  Column three dropzone
+    @ColumnThreePadding:0px;
+    @ColumnThreeVerticalPadding:30px;
+    
+//  Top dropzone
+    @TopContentPadding:0px;
+    @TopContentVerticalPadding:30px;
+    
+//  Bottom dropzone
+    @BottomContentPadding:0px;
+    @BottomContentVerticalPadding:30px;
+    
+//  Footer dropzone
+    @FooterPadding:0px;
+    @FooterPaddingVerticalPadding:30px;
+</pre>
+							<p>Widget padding and borders (At the top of <code>calculate.less.css</code>)</p>
+<pre class="prettyprint linenums">
+//  Widget paddings
+    @WidgetPadding:10px;
+    @WidgetVerticalTopPadding:0px;
+    @WidgetVerticalBottomPadding:0px;
+        
+//  Widget internal paddings
+    @WidgetTitlePadding:0px 0px 0px;
+    @WidgetBodyPadding:0px;
+    @WidgetBodyVerticalTopPadding:0px;
+    @WidgetBodyVerticalBottomPadding:0px;
+            
+//  Widget margins
+    @WidgetMargin:0px;
+    @WidgetVerticalTopMargin:0px;
+    @WidgetVerticalBottomMargin:10px;
+        
+//  Widget internal margins
+    @WidgetTitleBottomMargin:0px;
+    
+//  Widget border width
+    @WidgetBorderWidth:0px;
+</pre>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="assets/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+	
+	<script src="assets/js/prettify.js"></script>
+	<script src="assets/src/lang-css.js"></script>
+
+	<script src="assets/js/plugins.js"></script>
+	<script src="assets/js/script.js"></script>
+
+	<script>
+	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+	</script>
+</body>
+</html>

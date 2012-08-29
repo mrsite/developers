@@ -1,0 +1,280 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>MrSite Documentation</title>
+	<meta name="description" content="">
+
+	<meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+
+	<script src="assets/js/libs/modernizr-2.5.3.min.js"></script>
+</head>
+<body>
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+	
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="./index.html" class="brand">MrSite SDK</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li>
+							<a href="index.html">Home</a>
+						</li>
+						<li>
+							<a href="themes.html">Themes</a>
+						</li>
+						<li class="active">
+							<a href="widgets.html">Widgets</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="wrapper clearfix">
+			<div class="wrapper-inner clearfix">
+				<div class="navigation-column">
+					<div id="absolute-navigation">
+						<ul class="nav nav-list affix">
+							<li>
+								<a href="#GettingStarted">Getting started</a>
+							</li>
+							<li>
+								<a href="#Editables">Editables</a>
+								<ul>
+									<li><a href="#Textbox">Textbox</a></li>
+									<li><a href="#Textarea">Textarea</a></li>
+									<li><a href="#RichTextarea">Rich textareas</a></li>
+									<li><a href="#Slider">Slider</a></li>
+									<li><a href="#Dropdown">Dropdown</a></li>
+									<li><a href="#Images">Images</a></li>
+									<li><a href="#Gallery">Gallery</a></li>
+									<li><a href="#Colour">Colour</a></li>
+									<li><a href="#Preview">Preview settings</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#Meat">Meat</a>
+								<ul>
+									<li><a href="#Creating">Creating your first widget</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="content-column">
+					
+					<div id="GettingStarted" class="content-section">
+						
+						<h2>Getting started with widgets</h2>
+						
+						<p>Hi, and welcome to the SDK documentation for MrSite. The SDK allows you to build custom themes and widgets for all 4 MrSite packages, with the ability to submit your
+						works of art to the MrSite Marketplace. This documentation assumes that you're at an intermediate level in CSS (if you want to build themes) and JavaScript (if you want to build advanced themes or widgets), and won't cover the basics of either.</p>
+						
+					</div>
+					<div id="Editables" class="content-section">
+						
+						<h2>Editables</h2>
+						<p>Editables for widgets are built with the same functionality as editables for themes, however the application is a little different. Before we get stuck into using editables and getting them to talk to your widget, let's run through what's available.</p>
+						
+						<div id="Textbox" class="content-article clearfix">
+							<h3>Textbox <span class="btn">Add text box</span></h3>
+							<p>
+								Add a textbox editable to your widget, perfect for when you need the user to enter some custom text.
+							</p>
+							<p>Initial settings: <code>Key</code>, <code>Visible name</code>, <code>Default value</code></p>
+						</div>
+						
+						<div id="Textarea" class="content-article clearfix">
+							<h3>Textarea <span class="btn">Add textarea</span></h3>
+							<p>
+								Add a textarea editable to your widget. Useful if you need your user to add more text than what a text box gives.
+							</p>
+							<p>Initial settings: <code>Key</code>, <code>Visible name</code>, <code>Default value</code></p>
+						</div>
+						
+						<div id="RichTextarea" class="content-article clearfix">
+							<h3>Rich textarea <span class="btn">Add rich textarea</span></h3>
+							<p>
+								Add a rich textarea editable to your widget. The rich textarea displays a TinyMCE editor.
+							</p>
+							<p>Initial settings: <code>Key</code>, <code>Visible name</code>, <code>Default value</code></p>
+						</div>
+						
+						<div id="Slider" class="content-article clearfix">
+							<h3>Slider <span class="btn">Add slider</span></h3>
+							<p>
+								Add a slider editable to your widget. Sliders give the user a ranged selection, based on the minimum and maximum values that you add to the initial settings. Remember to set a default value so that the slider has a starting point in the range. 
+							</p>
+							<p>Initial settings: <code>Key</code>, <code>Visible name</code>, <code>Min</code>, <code>Max</code>, <code>Default value</code></p>
+						</div>
+						
+						<div id="Dropdown" class="content-article clearfix">
+							<h3>Dropdown box <span class="btn">Add dropdown box</span></h3>
+							<p>
+								Dropdown box editables present the user with defined choices for your widget. You can either select to show products, categories, pages, polls or create a custom dropdown box.
+							</p>
+							<p>Initial settings: <code>Key</code>, <code>Visible name</code>, <code>Values: {"Products", "Categories", "Pages", "Polls", "Custom"}</code></p>
+							<p>Using <code>Custom</code> will let you add custom <code>Key</code> and <code>Value</code> options to the dropdown.</p>
+						</div>
+						
+						<div id="Images" class="content-article clearfix">
+							<h3>Images <span class="btn">Add images</span></h3>
+							<p>
+								By adding the images editable, users can choose to upload or select images from the image gallery, and insert them into the widget. Each gallery item or photo also has settings for a <code>Title</code>, <code>Description</code> and <code>Hyperlink</code>.
+							</p>
+							<p>Initial settings: <code>Key</code>, <code>Visible name</code>, <code>Default value</code></p>
+						</div>
+						
+						<div id="Gallery" class="content-article clearfix">
+							<h3>Gallery <span class="btn">Add gallery</span></h3>
+							<p>
+								By adding the gallery editable, users can choose to upload or select images from the image gallery, and insert them into the widget. Each gallery item or photo also has settings for a <code>Title</code>, <code>Alt tag</code>.
+							</p>
+							<p>Initial settings: <code>Key</code>, <code>Visible name</code>, <code>Default value</code></p>
+						</div>
+						
+						<div id="Colour" class="content-article clearfix">
+							<h3>Colour <span class="btn">Add colour</span></h3>
+							<p>
+								The colour editable presents a colour picker to the user.
+							</p>
+							<p>Initial settings: <code>Key</code>, <code>Visible name</code>, <code>Default value</code></p>
+						</div>
+						
+						<div id="Preview" class="content-article clearfix">
+							<h3>Preview <span class="btn">Preview settings</span></h3>
+							<p>
+								The preview button allows you to preview your widget inside of the administration panel, just as the customer would see it when building their page.
+							</p>
+							
+						</div>
+
+					</div>
+					<div id="Meat" class="content-section">
+						
+						<h2>Meat</h2>
+						<p>One of the files included with your new widget is the <strong>Meat</strong>. The Meat is the file that we use to present the widget on the users website, so any markup that you use in this file will show up once the widget is dropped onto a page. Because users might drop a few versions of this widget onto their page, you need to wrap up your widget JavaScript in a wrapper ID.</p>
+						
+						<h3>Initializing your widget</h3>
+<pre class="prettyprint linenums">
+&lt;script&gt;
+(function(settings) {
+    $(function() {            
+        var $wrapper = $('#' + settings.wrapperId);
+        var $widget = $wrapper.find('.myWidget');
+    });
+})(MrSite.Widget.getSettings());
+&lt;/script&gt;
+</pre>
+
+<p>The markup for your widget:</p>
+<pre class="prettyprint linenums">
+&lt;div class="myWidget"&gt;
+    //widget code goes in here 
+&lt;/div&gt;
+</pre>
+
+						
+						<div id="Creating" class="content-article clearfix">
+							<h3>Creating your first widget</h3>
+							<p>
+								Okay, so you're ready to get stuck into making your new widget awesome. Lets start of by adding a <strong>Textbox</strong> only as your first editable. Below is an example of what you might write into the initial settings for this editable. 
+							</p>
+							<p>Initial settings: <code>Key: mytextbox</code>, <code>Visible name: Enter something cool</code>, <code>Default value: hello world</code></p>
+							<br/>
+							<p>Now, as we have an initial value for this textbox, we can grab this value and display it on our website. Firstly though, make sure you've added your newly authored widget to a page, and you've saved and published.<br/><br/>
+							<span class="label label-info">Note:</span> You don't need to publish if you're using Seller, Pro Seller or Pro Seller Plus.</p>
+							<br/>
+							
+							<h4>Appending the value of mytextbox:</h4>
+							
+<pre class="prettyprint linenums">
+&lt;script&gt;
+(function(settings) {
+    $(function() {            
+        var $wrapper = $('#' + settings.wrapperId);
+        var $widget = $wrapper.find('.myWidget');
+		
+        var $myTextbox = settings.mytextbox;
+        $('.myWidget').append($myTextbox);
+    });
+})(MrSite.Widget.getSettings());
+&lt;/script&gt;
+
+&lt;div class="myWidget"&gt;
+    'Hello world' will go in here.
+&lt;/div&gt;
+</pre>
+							
+							<h4>Working with arrays:</h4>
+							<p>If you've added the image editable to your widget, then you'll need to use a template for grabbing those images and displaying them on your website. There are a few templating options out there, but for this example we'll use <a href="http://api.jquery.com/jquery.tmpl/" target="_blank">jQuery.tmpl</a>. If you need to use external scripts or CSS in your widget, you can add them by dragging and dropping the .js file into the <strong>Assets</strong> area under <strong>Settings</strong> for that widget.</p>
+							<p>In this example, we'll add an images editable with the following settings: <code>Key: myimages</code>, <code>Visible name: Choose an image</code>, <code>Default value: myimages</code>
+							
+<pre class="prettyprint linenums">
+&lt;script&gt;
+(function(settings) {
+    $(function() {            
+        var $wrapper = $('#' + settings.wrapperId);
+        var $widget = $wrapper.find('.mySlideshow');
+        $widget.find('script.slideshow').tmpl(settings).appendTo('.myGallery');
+        
+    });
+})(MrSite.Widget.getSettings());
+&lt;/script&gt;
+
+&lt;div class="mySlideshow"&gt;
+    &lt;script class="slideshow" type="text/x-jQuery-tmpl"&gt;
+        {{each(i,item) myimages}}
+            &lt;img class="myImage" src="${item.url}" /&gt;
+        {{/each}}
+    &lt;/script&gt;
+    &lt;div class="myGallery"&gt;
+        //My images go in here
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+						
+							<p>You can also grab the other settings from the array, by adding <code>${item.title}</code> or <code>${item.url}</code> into the template area of your widget.
+						
+						</div>
+						
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="assets/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+	
+	<script src="assets/js/prettify.js"></script>
+	<script src="assets/src/lang-css.js"></script>
+
+	<script src="assets/js/plugins.js"></script>
+	<script src="assets/js/script.js"></script>
+
+	<script>
+	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+	</script>
+</body>
+</html>
