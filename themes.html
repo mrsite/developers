@@ -82,6 +82,9 @@
 									<li><a href="#DefiningVariables">Defining variables</a></li>
 								</ul>
 							</li>
+							<li>
+								<a href="#Submit">Submitting your theme</a>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -252,27 +255,27 @@ Template.VariantProduct.Thumbnail:80,80
 </pre>
 						<p><span class="label label-info">Note:</span> Set the <strong>'y' value</strong> to <strong>0</strong> to stop image cropping for <code>Template.Product.Thumbnail</code> and the <code>Template.Showcase.Zoom.Thumbnail</code>.
 
-<h3>Product page thumbnail image</h3>
+<h4>Product page thumbnail image</h4>
 <p><code>Template.Showcase.Thumbnail</code> &amp; <code>Template.VariantProduct.Thumbnail</code></p>
 <img class="img-polaroid" src="http://placehold.it/80x80">
 <div class="clear"></div>
-
-<h3>Products in grid image</h3>
+<br/>
+<h4>Products in grid image</h4>
 <p><code>Template.Product.Thumbnail</code></p>
 <img class="img-polaroid" src="http://placehold.it/230x222">
 <div class="clear"></div>
-
-<h3>Categories in grid image</h3>
+<br/>
+<h4>Categories in grid image</h4>
 <p><code>Template.Category.Thumbnail</code></p>
 <img class="img-polaroid" src="http://placehold.it/265x255">
 <div class="clear"></div>
-
-<h3>Product page image</h3>
+<br/>
+<h4>Product page image</h4>
 <p><code>Template.Showcase.Big.Thumbnail</code></p>
 <img class="img-polaroid" src="http://placehold.it/370x0">
 <div class="clear"></div>
-
-<h3>Product page image zoomed or popup</h3>
+<br/>
+<h4>Product page image zoomed or popup</h4>
 <p><code>Template.Showcase.Zoom.Thumbnail</code></p>
 <img class="img-polaroid" src="http://placehold.it/600x0">
 <div class="clear"></div>
@@ -336,18 +339,18 @@ Template.VariantProduct.Thumbnail:80,80
 							<h3>Drop shadows</h3>
 <pre class="prettyprint linenums">
 .dropshadow(@a:0px, @b:1px, @c:10px, @colour:rgba(0, 0, 0, 1)) {
-	-moz-box-shadow:@a @b @c @colour;
-	-webkit-box-shadow:@a @b @c @colour;
-	box-shadow:@a @b @c @colour;
-	-moz-box-shadow:@a @b @c @colour;
-	-webkit-box-shadow:@a @b @c @colour;
-	box-shadow:@a @b @c @colour;
+    -moz-box-shadow:@a @b @c @colour;
+    -webkit-box-shadow:@a @b @c @colour;
+    box-shadow:@a @b @c @colour;
+    -moz-box-shadow:@a @b @c @colour;
+    -webkit-box-shadow:@a @b @c @colour;
+    box-shadow:@a @b @c @colour;
 }
 </pre>
 <p>Applying this function:</p>
 <pre class="prettyprint linenums">
 .element{
-	.dropshadow(0px, 1px, 10px, rgba(0, 0, 0, 1));
+    .dropshadow(0px, 1px, 10px, rgba(0, 0, 0, 1));
 }
 </pre>
 						</div>
@@ -403,73 +406,73 @@ Template.VariantProduct.Thumbnail:80,80
 							<p><span class="label label-info">Note:</span> You don't need to understand how the grid calculator works, rather know what variables you need to put into it.</p>
 <pre class="prettyprint linenums">
 .GenerateWidgets(){
-	.ContentColumnOne{
-		.WrapClass0{.BuildSDK(@ColumnOneWidth, 1, 1, (2 * @ColumnOnePadding);}
-		.WrapClass1{.BuildSDK(@ColumnOneWidth, 1, 1, (2 * @ColumnOnePadding);}
-		.WrapClass2{.BuildSDK(@ColumnOneWidth, 1, 1, (2 * @ColumnOnePadding);}
-		.WrapClass3{.BuildSDK(@ColumnOneWidth, 1, 1, (2 * @ColumnOnePadding);}
-		.WrapClass4{.BuildSDK(@ColumnOneWidth, 1, 1, (2 * @ColumnOnePadding);}
-	}
-	.ContentColumnTwo{
-		.WrapClass0{.BuildSDK(@ColumnTwoWidth, 4, 1, (2 * @ColumnTwoPadding);}
-		.WrapClass1{.BuildSDK(@ColumnTwoWidth, 4, 1, (2 * @ColumnTwoPadding);}
-		.WrapClass2{.BuildSDK(@ColumnTwoWidth, 2, 2, (2 * @ColumnTwoPadding);}
-		.WrapClass3{.BuildSDK(@ColumnTwoWidth, (4/3), 3, (2 * @ColumnTwoPadding);}
-		.WrapClass4{.BuildSDK(@ColumnTwoWidth, 1, 4, (2 * @ColumnTwoPadding);}
-	}
-	.ContentColumnTwo_Small{
-		.WrapClass0{.BuildSDK(@ColumnTwoWidth_Small, 4, 1, (2 * @ColumnTwoPadding);}
-		.WrapClass1{.BuildSDK(@ColumnTwoWidth_Small, 4, 1, (2 * @ColumnTwoPadding);}
-		.WrapClass2{.BuildSDK(@ColumnTwoWidth_Small, 2, 2, (2 * @ColumnTwoPadding);}
-		.WrapClass3{.BuildSDK(@ColumnTwoWidth_Small, (4/3), 3, (2 * @ColumnTwoPadding);}
-		.WrapClass4{.BuildSDK(@ColumnTwoWidth_Small, 1, 3, (2 * @ColumnTwoPadding);}
-	}
-	.ContentColumnTwo_Full{
-		.WrapClass0{.BuildSDK(@ColumnTwoWidth_Full, 4, 1, (2 * @ColumnTwoPadding);}
-		.WrapClass1{.BuildSDK(@ColumnTwoWidth_Full, 4, 1, (2 * @ColumnTwoPadding);}
-		.WrapClass2{.BuildSDK(@ColumnTwoWidth_Full, 2, 3, (2 * @ColumnTwoPadding);}
-		.WrapClass3{.BuildSDK(@ColumnTwoWidth_Full, (4/3), 3, (2 * @ColumnTwoPadding);}
-		.WrapClass4{.BuildSDK(@ColumnTwoWidth_Full, 1, 4, (2 * @ColumnTwoPadding);}
-	}
-	.ContentColumnThree{
-		.WrapClass0{.BuildSDK(@ColumnThreeWidth, 1, 1, (2 * @ColumnThreePadding);}
-		.WrapClass1{.BuildSDK(@ColumnThreeWidth, 1, 1, (2 * @ColumnThreePadding);}
-		.WrapClass2{.BuildSDK(@ColumnThreeWidth, 1, 1, (2 * @ColumnThreePadding);}
-		.WrapClass3{.BuildSDK(@ColumnThreeWidth, 1, 1, (2 * @ColumnThreePadding);}
-		.WrapClass4{.BuildSDK(@ColumnThreeWidth, 1, 1, (2 * @ColumnThreePadding);}
-	}
-	.ContentTop{
-		.WrapClass0{.BuildSDK(@ContentTopWidth, 4, 2, (2 * @TopContentPadding);}
-		.WrapClass1{.BuildSDK(@ContentTopWidth, 4, 2, (2 * @TopContentPadding);}
-		.WrapClass2{.BuildSDK(@ContentTopWidth, 2, 3, (2 * @TopContentPadding);}
-		.WrapClass3{.BuildSDK(@ContentTopWidth, (4/3), 4, (2 * @TopContentPadding);}
-		.WrapClass4{.BuildSDK(@ContentTopWidth, 1, 5, (2 * @TopContentPadding);}
-	}
-	.ContentBottom{
-		.WrapClass0{.BuildSDK(@ContentBottomWidth, 4, 2, (2 * @BottomContentPadding);}
-		.WrapClass1{.BuildSDK(@ContentBottomWidth, 4, 2, (2 * @BottomContentPadding);}
-		.WrapClass2{.BuildSDK(@ContentBottomWidth, 2, 3, (2 * @BottomContentPadding);}
-		.WrapClass3{.BuildSDK(@ContentBottomWidth, (4/3), 4, (2 * @BottomContentPadding);}
-		.WrapClass4{.BuildSDK(@ContentBottomWidth, 1, 5, (2 * @BottomContentPadding);}
-	}
-	#footerWrapper{
-		.WrapClass0{.BuildSDK(@FooterWidth, 4, 2, (2 * @FooterPadding);}
-		.WrapClass1{.BuildSDK(@FooterWidth, 4, 2, (2 * @FooterPadding);}
-		.WrapClass2{.BuildSDK(@FooterWidth, 2, 3, (2 * @FooterPadding);}
-		.WrapClass3{.BuildSDK(@FooterWidth, (4/3), 4, (2 * @FooterPadding);}
-		.WrapClass4{.BuildSDK(@FooterWidth, 1, 5, (2 * @FooterPadding);}
-	}
+    .ContentColumnOne{
+        .WrapClass0{.BuildSDK(@ColumnOneWidth, 1, 1, (2 * @ColumnOnePadding);}
+        .WrapClass1{.BuildSDK(@ColumnOneWidth, 1, 1, (2 * @ColumnOnePadding);}
+        .WrapClass2{.BuildSDK(@ColumnOneWidth, 1, 1, (2 * @ColumnOnePadding);}
+        .WrapClass3{.BuildSDK(@ColumnOneWidth, 1, 1, (2 * @ColumnOnePadding);}
+        .WrapClass4{.BuildSDK(@ColumnOneWidth, 1, 1, (2 * @ColumnOnePadding);}
+    }
+    .ContentColumnTwo{
+        .WrapClass0{.BuildSDK(@ColumnTwoWidth, 4, 1, (2 * @ColumnTwoPadding);}
+        .WrapClass1{.BuildSDK(@ColumnTwoWidth, 4, 1, (2 * @ColumnTwoPadding);}
+        .WrapClass2{.BuildSDK(@ColumnTwoWidth, 2, 2, (2 * @ColumnTwoPadding);}
+        .WrapClass3{.BuildSDK(@ColumnTwoWidth, (4/3), 3, (2 * @ColumnTwoPadding);}
+        .WrapClass4{.BuildSDK(@ColumnTwoWidth, 1, 4, (2 * @ColumnTwoPadding);}
+    }
+    .ContentColumnTwo_Small{
+        .WrapClass0{.BuildSDK(@ColumnTwoWidth_Small, 4, 1, (2 * @ColumnTwoPadding);}
+        .WrapClass1{.BuildSDK(@ColumnTwoWidth_Small, 4, 1, (2 * @ColumnTwoPadding);}
+        .WrapClass2{.BuildSDK(@ColumnTwoWidth_Small, 2, 2, (2 * @ColumnTwoPadding);}
+        .WrapClass3{.BuildSDK(@ColumnTwoWidth_Small, (4/3), 3, (2 * @ColumnTwoPadding);}
+        .WrapClass4{.BuildSDK(@ColumnTwoWidth_Small, 1, 3, (2 * @ColumnTwoPadding);}
+    }
+    .ContentColumnTwo_Full{
+        .WrapClass0{.BuildSDK(@ColumnTwoWidth_Full, 4, 1, (2 * @ColumnTwoPadding);}
+        .WrapClass1{.BuildSDK(@ColumnTwoWidth_Full, 4, 1, (2 * @ColumnTwoPadding);}
+        .WrapClass2{.BuildSDK(@ColumnTwoWidth_Full, 2, 3, (2 * @ColumnTwoPadding);}
+        .WrapClass3{.BuildSDK(@ColumnTwoWidth_Full, (4/3), 3, (2 * @ColumnTwoPadding);}
+        .WrapClass4{.BuildSDK(@ColumnTwoWidth_Full, 1, 4, (2 * @ColumnTwoPadding);}
+    }
+    .ContentColumnThree{
+        .WrapClass0{.BuildSDK(@ColumnThreeWidth, 1, 1, (2 * @ColumnThreePadding);}
+        .WrapClass1{.BuildSDK(@ColumnThreeWidth, 1, 1, (2 * @ColumnThreePadding);}
+        .WrapClass2{.BuildSDK(@ColumnThreeWidth, 1, 1, (2 * @ColumnThreePadding);}
+        .WrapClass3{.BuildSDK(@ColumnThreeWidth, 1, 1, (2 * @ColumnThreePadding);}
+        .WrapClass4{.BuildSDK(@ColumnThreeWidth, 1, 1, (2 * @ColumnThreePadding);}
+    }
+    .ContentTop{
+        .WrapClass0{.BuildSDK(@ContentTopWidth, 4, 2, (2 * @TopContentPadding);}
+        .WrapClass1{.BuildSDK(@ContentTopWidth, 4, 2, (2 * @TopContentPadding);}
+        .WrapClass2{.BuildSDK(@ContentTopWidth, 2, 3, (2 * @TopContentPadding);}
+        .WrapClass3{.BuildSDK(@ContentTopWidth, (4/3), 4, (2 * @TopContentPadding);}
+        .WrapClass4{.BuildSDK(@ContentTopWidth, 1, 5, (2 * @TopContentPadding);}
+    }
+    .ContentBottom{
+        .WrapClass0{.BuildSDK(@ContentBottomWidth, 4, 2, (2 * @BottomContentPadding);}
+        .WrapClass1{.BuildSDK(@ContentBottomWidth, 4, 2, (2 * @BottomContentPadding);}
+        .WrapClass2{.BuildSDK(@ContentBottomWidth, 2, 3, (2 * @BottomContentPadding);}
+        .WrapClass3{.BuildSDK(@ContentBottomWidth, (4/3), 4, (2 * @BottomContentPadding);}
+        .WrapClass4{.BuildSDK(@ContentBottomWidth, 1, 5, (2 * @BottomContentPadding);}
+    }
+    #footerWrapper{
+        .WrapClass0{.BuildSDK(@FooterWidth, 4, 2, (2 * @FooterPadding);}
+        .WrapClass1{.BuildSDK(@FooterWidth, 4, 2, (2 * @FooterPadding);}
+        .WrapClass2{.BuildSDK(@FooterWidth, 2, 3, (2 * @FooterPadding);}
+        .WrapClass3{.BuildSDK(@FooterWidth, (4/3), 4, (2 * @FooterPadding);}
+        .WrapClass4{.BuildSDK(@FooterWidth, 1, 5, (2 * @FooterPadding);}
+    }
 	
-	//Start generating the CSS
-	.BuildSDK(@width, @divider, @thumbcount, @padding){
+    //Start generating the CSS
+    .BuildSDK(@width, @divider, @thumbcount, @padding){
 	
-		@wrapclasswidth:(((@width - @padding) / @divider) - ((2 * @WidgetPadding) + (2 * @WidgetMargin) + (2 * @WidgetBorderWidth)));
-		width:@wrapclasswidth;
+        @wrapclasswidth:(((@width - @padding) / @divider) - ((2 * @WidgetPadding) + (2 * @WidgetMargin) + (2 * @WidgetBorderWidth)));
+        width:@wrapclasswidth;
 		
-		.productWrapper{
-			width:((@wrapclasswidth - (2 * @WidgetBodyPadding)) / @thumbcount);
-		}
-	}
+        .productWrapper{
+            width:((@wrapclasswidth - (2 * @WidgetBodyPadding)) / @thumbcount);
+        }
+    }
 }
 .GenerateWidgets();
 </pre>
@@ -552,6 +555,55 @@ Template.VariantProduct.Thumbnail:80,80
 
 						</div>
 					</div>
+					
+					<div id="Submit" class="content-section">
+						
+						<h2>Submitting your theme</h2>
+						<p>
+							When you're ready to submit your theme, there are a few details that we need from you first. Each theme has two icons that we display to users when they're browsing the Marketplace, along with screenshots, a description and a few other bits.
+						</p>
+						
+						<div class="content-article clearfix">
+							<h3>Theme images</h3>
+							<p>To apply your image, simply drag and drop the image onto the appropriate placeholder.</p>
+							<br/>
+							
+							<h4>Small image</h4>
+							<p>JPG format: <code>50px x 50px</code></p>
+							<img class="img-polaroid" src="http://placehold.it/50x50">
+							<div class="clear"></div>
+							<br/>
+							
+							<h4>Large image</h4>
+							<p>JPG format: <code>148px x 148px</code></p>
+							<img class="img-polaroid" src="http://placehold.it/148x148">
+							<div class="clear"></div>
+
+						</div>
+						
+						<div class="content-article clearfix">
+							<h3>Submit to MrSite</h3>
+							<p>Clicking on the Submit to MrSite button will pop up a dialog box with a few details you need to submit. If you have already submitted this theme, you'll have the option to submit an update to it. If you submit an update, any customers using your theme will be notified of the update via a small <strong>Update</strong> button in the list of themes. If you are submitting a new theme, then you'll be presented with the <strong>Theme submit form</strong>.</p>
+							<br/>
+							
+							<h4>Add to categories</h4>
+							<p>Select the categories in which this theme will be applicable.</p>
+							<br/>
+							
+							<h4>Details</h4>
+							<p>Fill in the <strong>Name</strong>, <strong>Description</strong>, <strong>Instructions</strong>, <strong>Tags</strong>, <strong>Price</strong> and <strong>Exclusive price</strong>.</p>
+							<p>The <strong>Description</strong> and the <strong>Instructions</strong> will be shown to the customer in the Marketplace. You can submit your theme as FREE by leaving the <strong>Price</strong> and <strong>Exclusive price</strong> as <strong>0</strong>.</p>
+							<br/>
+							
+							<h4>Screenshot image (up to 6)</h4>
+							<p>JPG format: <code>800px x 600px</code></p>
+							<img class="img-polaroid" src="http://placehold.it/800x600">
+							<div class="clear"></div>
+
+						</div>
+						
+					</div>
+					
 				</div>
 			</div>
 		</div>
