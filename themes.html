@@ -383,7 +383,7 @@ Template.VariantProduct.Thumbnail:80,80
 <pre class="prettyprint linenums">
 .opacity(@opacity: 0.7){
     @ie7opacity: "progid:DXImageTransform.Microsoft.Alpha(Opacity={0})";
-    @ieopacity: alpha(opacity={0});
+    @ieopacity: "alpha(opacity={0})";
     -ms-filter:formatstring(@ie7opacity, (@opacity * 100));
     filter:formatstring(@ieopacity, @opacity);
     -moz-opacity:@opacity;
