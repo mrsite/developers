@@ -53,6 +53,9 @@
 								<a href="#GettingStarted">Getting started</a>
 							</li>
 							<li>
+								<a href="#Tools">Development Tools</a>
+							</li>
+							<li>
 								<a href="#Editables">Editables</a>
 								<ul>
 									<li><a href="#Font">Font</a></li>
@@ -99,8 +102,10 @@
 						works of art to the MrSite Marketplace. You can make your themes as simple, or complicated as you like.</p>
 						
 						<p>This documentation assumes that you're at an intermediate level in CSS.</p>
-						<br/>
-						
+						<h3>Structure</h3>
+						<p>The most important files in the template are <code>common.less.css</code> and <code>calculate.less.css</code> which you can find in <code>Assets/css</code> folder. Both of these files use <a href="http://lesscss.org/" title="LessCSS">LESS</a> syntax and are compiled immediately after saving in the editor.</p>
+
+						<!--
 						<div class="download-developer-theme clearfix">
 							<span class="download-developer-theme-help">
 								Get started
@@ -110,7 +115,18 @@
 								Version 1.0
 							</span>
 						</div>
-						
+						-->
+					</div>
+					<div id="Tools" class="content-section">
+						<h2>Development Tools</h2>
+						<p>All the work on the template is done in our Development Tools. These consists of file browser and tabs with text files that you can edit right inside of your browser. </p>
+						<h5>Text editor</h5>
+						<p>For editing text files we are using the open source <a href="http://ace.ajax.org/">ACE editor</a>. It's got code highlighting and stuff. We like it.</p>
+						<h5>Uploading files</h5>
+						<p>To upload files just drag and drop them into the folder. There's a limit as to what type of files you can upload. Here is a full list of allowed extensions: <code>html, htm, css, js, png, gif, jpeg, jpg, txt, eot, ttf, woff, svg, swf, mp3, mp4</code>
+						</p>
+						<h5>Previewing your changes</h5>
+						<p>In the top right corner you will find a "Preview" button. Clicking it will either open a new windows or refresh the content of it if it was previously opened.</p>
 					</div>
 					
 					
@@ -219,7 +235,7 @@
 <p>Applying this editable (the long way):</p>
 <pre class="prettyprint linenums">
 .element{
-	background-image:@backgroundimage;
+	background-url:@backgroundimage;
 	background-repeat:@backgroundrepeat;
 	background-position:@backgroundposition;
 	background-attachment:@backgroundattachment;
@@ -383,7 +399,7 @@ Template.VariantProduct.Thumbnail:80,80
 <pre class="prettyprint linenums">
 .opacity(@opacity: 0.7){
     @ie7opacity: "progid:DXImageTransform.Microsoft.Alpha(Opacity={0})";
-    @ieopacity: "alpha(opacity={0})";
+    @ieopacity: alpha(opacity={0});
     -ms-filter:formatstring(@ie7opacity, (@opacity * 100));
     filter:formatstring(@ieopacity, @opacity);
     -moz-opacity:@opacity;
